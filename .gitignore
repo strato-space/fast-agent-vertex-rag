@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
+uv.lock
+fast_agent_vertex_rag.egg-info
 fastagent.secrets.yaml
+fastagent.jsonl
