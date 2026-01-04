@@ -1,6 +1,16 @@
 # fast-agent-vertex-rag
 
-AgentCard example that wraps Google Vertex RAG as a function tool for fast-agent.
+Minimal AgentCard repo that wraps Google Vertex RAG as a function tool for fast-agent.
+
+This repo follows the AgentCard RFC:
+<https://github.com/evalstate/fast-agent/blob/main/plan/agent-card-rfc.md>
+
+## Design (why this is minimal)
+
+- `vertex-rag.md` is the AgentCard.
+- `function_tools` loads `vertex_rag_tool.py:mini_rag` via the function tool loader.
+- `pyproject.toml` declares all runtime dependencies, e.g. the fast-agent.ai runtime.
+- `fastagent.secrets.yaml` supplies Vertex AI project/region for the tool.
 
 ## Setup
 
@@ -21,7 +31,7 @@ Update `fastagent.secrets.yaml` with your Google Cloud project and region. Authe
 ## Run
 
 ```bash
-uv run fast-agent go --card vertex-rag.md --message "Summarize customer pain points. Drive ID: <YOUR_DRIVE_ID>"
+uv run fast-agent go --card vertex-rag.md --message "Produce a short top 5 prioritized list about customer pain points. From RAG, select 50 relevant chunks about customer pain points. Deduplicate. Links: [name](<link>). Compact output. Drive ID: 1J3ubtdkmFuWDjfW3_qT2Fhsdn2pbtv-8."
 ```
 
 ## Notes
