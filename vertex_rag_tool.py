@@ -85,7 +85,14 @@ def _create_and_import_corpus(display_name: str, paths: list[str]) -> rag.RagCor
 
 
 def mini_rag(query: str, drive_id: str, top_k: int = 5) -> object:
-    """Query Vertex RAG using a Google Drive folder ID."""
+    """Query Vertex RAG using a Google Drive folder ID and return retrieval results.
+
+    Args:
+        query: Natural language query to search against the RAG corpus.
+        drive_id: Google Drive folder ID to index/search. The RAG corpus is created
+            on first use for this drive_id and reused on subsequent calls.
+        top_k: Number of top matches to return.
+    """
     project_id, location = _load_vertex_settings()
     _ensure_vertexai_init(project_id, location)
     if not drive_id:
