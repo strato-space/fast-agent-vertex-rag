@@ -1,0 +1,17 @@
+[project]
+name = "fast-agent-vertex-rag"
+version = "0.1.0"
+description = "fast-agent Vertex RAG AgentCard example"
+readme = "README.md"
+requires-python = ">=3.13.5"
+dependencies = [
+  "fast-agent-mcp",
+  "google-cloud-aiplatform",
+  "google-api-python-client",
+]
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+fast-agent-mcp = { git = "https://github.com/strato-space/fast-agent.git", branch = "fix/acp-mcp-watch" }
