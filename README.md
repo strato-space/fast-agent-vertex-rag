@@ -36,6 +36,10 @@ uv run fast-agent go --card agents --message "Produce a short top 5 prioritized 
 uv run fast-agent go --card agents --watch
 ```
 
+### Video: AgentCard: fast-agent-vertex-rag sample
+
+[![AgentCard: fast-agent-vertex-rag sample](https://img.youtube.com/vi/bP19txX3Mpk/hqdefault.jpg)](https://youtu.be/bP19txX3Mpk)
+
 ## Design (why this is minimal)
 
 - `agents/vertex-rag.md` is the AgentCard.
