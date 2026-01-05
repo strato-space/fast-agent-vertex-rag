@@ -24,14 +24,22 @@ Enable Vertex AI RAG + Google Drive APIs and required roles in your project. If 
 
 ## Run
 
+### Batch
+
 ```bash
-uv run fast-agent go --card vertex-rag.md --message "Produce a short top 5 prioritized list about customer pain points. From RAG, select 50 relevant chunks about customer pain points. Deduplicate. Links: [name](<link>). Compact output. Drive ID: 1J3ubtdkmFuWDjfW3_qT2Fhsdn2pbtv-8."
+uv run fast-agent go --card agents --message "Produce a short top 5 prioritized list about customer pain points. From RAG, select 50 relevant chunks about customer pain points. Deduplicate. Links: [name](<link>). Compact output. Drive ID: 1J3ubtdkmFuWDjfW3_qT2Fhsdn2pbtv-8."
+```
+
+### Interactive (with Read-Eval-Print-Loop)
+
+```bash
+uv run fast-agent go --card agents --watch
 ```
 
 ## Design (why this is minimal)
 
-- `vertex-rag.md` is the AgentCard.
-- `function_tools` loads `vertex_rag_tool.py:mini_rag` via the function tool loader.
+- `agents/vertex-rag.md` is the AgentCard.
+- `function_tools` loads `agents/vertex_rag_tool.py:mini_rag` via the function tool loader.
 - `pyproject.toml` declares all runtime dependencies, including `fast-agent-mcp`.
 - `fastagent.secrets.yaml` supplies Vertex AI project/region for the tool.
 
@@ -44,8 +52,8 @@ uv run fast-agent go --card vertex-rag.md --message "Produce a short top 5 prior
 
 ### fast-agent.ai
 
-- fast-agent repo: <https://github.com/evalstate/fast-agent>
 - fast-agent docs: <https://fast-agent.ai>
+- fast-agent repo: <https://github.com/evalstate/fast-agent>
 
 ### Google Vertex RAG
 
